@@ -27,3 +27,9 @@ for d in data: #留言篩選印出留言資料小於100個字的
         new.append(d.strip())
 print("一共有", len(new), "筆資料留言小於等於100")
 
+good = []
+for d in data:
+    if "good" in d:
+        good.append(d.strip())
+print("資料裡面有字串good的資料有",len(good),"筆")
+
