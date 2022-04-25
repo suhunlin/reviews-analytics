@@ -14,7 +14,7 @@ try:
                 # print(data[count - 1])
 except Exception as e:
     print(e)
-print('檔案讀取完了，總共有',len(data),'筆資料。')
+print('檔案讀取完了，總共有', len(data), '筆資料。')
 
 for item in data:
     sum_length += len(item)
@@ -25,5 +25,5 @@ new = []
 for d in data: #留言篩選印出留言資料小於100個字的
     if len(d) <= 100:
         new.append(d.strip())
-print("一共有",len(new),"筆資料留言小於等於100")
+print("一共有", len(new), "筆資料留言小於等於100")
 
