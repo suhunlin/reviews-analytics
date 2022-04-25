@@ -21,3 +21,9 @@ for item in data:
 average_length = sum_length / len(data)
 print('資料的平均長度為',average_length)
 
+new = []
+for d in data: #留言篩選印出留言資料小於100個字的
+    if len(d) <= 100:
+        new.append(d.strip())
+print(new)
+
