@@ -1,4 +1,5 @@
 import os
+import time
 def read_file(filename):
     datas = []
     try:
@@ -46,7 +47,10 @@ def main():
     else:
         datas = []
 
+    start_time = time.time()
     word_dictionary = load_count_datas_to_dictionary(datas)
+    end_time = time.time()
+    print('載入字典共花了:', end_time - start_time, '秒')
     # print_word_dictionary_info(word_dictionary)
     while True:
         user_input = input('請輸入要查詢出現次數的字(結束請輸入q):')
