@@ -1,5 +1,7 @@
 import os
 import time
+import progressbar
+
 def read_file(filename):
     datas = []
     try:
@@ -13,6 +15,7 @@ def read_file(filename):
 def load_count_datas_to_dictionary(datas):
     wc = {}
     count = 0
+    bar = progressbar.ProgressBar(max_value = 1000000) #一百萬筆留言，所以最大值是一百萬
     if not datas:
         print('沒有的資料載入!!!')
         return wc
@@ -26,8 +29,9 @@ def load_count_datas_to_dictionary(datas):
                     wc[word] += 1
                 else:
                     wc[word] = 1
-            if count % 10000 == 0:
-                print('-----載入', count ,'資料，請耐心等待!!!-----')
+            bar.update(count)
+            # if count % 10000 == 0:
+            #     print('-----載入', count ,'資料，請耐心等待!!!-----')
     print('共載入:',len(wc),'個字進入字典!!!')
     return wc
 
@@ -58,7 +62,6 @@ def main():
             print('謝謝查詢，慢走不送!!!!')
             break
         print_user_inquire_word(word_dictionary,user_input)
-
 
 if __name__ == '__main__':
     main()
